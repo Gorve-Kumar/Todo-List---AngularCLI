@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-root', // element selector
+  templateUrl: './app.component.html', // which template?
+  styleUrl: './app.component.css' // styling of CSS?
 })
 
 export class AppComponent {
-  title = 'TodoList';
+  title = 'Todo List';
+
+
+  
+  // constructor() {
+  //   setTimeout(() => {
+  //     this.title = "Changed Title"; // it updates title, without reloading.
+  //   }, 4000);
+  // };
 }
