@@ -1,8 +1,19 @@
 <div class="my-4">
-    <h3> {{todo?.title}} </h3>
+    <h6 [ngClass]="{'strike': !todo?.active}"> {{todo?.title}} :  {{todo?.desc}} </h6>
 
-    <p> {{todo?.desc}} </p>
-    <button class="btn btn-sm btn-danger" (click)="onClick(todo)">DELETE</button>
+    <!-- <p [ngClass]="{'strike': !todo?.active}"> {{todo?.desc}} </p> -->
+
+    <div class="mb-3 form-check inline">
+        <input type="checkbox" 
+                class="form-check-input" 
+                id="todo{{i}}" 
+                (click)="onCheckBoxClick(todo)"
+                [checked]="!todo?.active">
+        <label class="form-check-label" 
+               for="todo{{i}}">Done</label>
+    </div>
+
+    <button class="btn btn-sm btn-danger" (click)="onClick(todo)">Remove Todo</button>
     <!-- Event Emitter -->
 
 </div>

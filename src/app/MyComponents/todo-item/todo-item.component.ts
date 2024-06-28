@@ -8,7 +8,9 @@ import { Todo } from '../../Todo';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo?: Todo;
+  @Input() i?: number;
   @Output() todoDelete: EventEmitter<Todo> = new EventEmitter();
+  @Output() todoCheckBox: EventEmitter<Todo> = new EventEmitter();
 
   constructor(){
   }
@@ -20,5 +22,10 @@ export class TodoItemComponent implements OnInit {
   onClick(todo?:Todo){
     this.todoDelete.emit(todo);
     console.log("Triggered");
+  }
+
+  onCheckBoxClick(todo?:Todo){
+    this.todoCheckBox.emit(todo);
+    console.log("Toggling");
   }
 }

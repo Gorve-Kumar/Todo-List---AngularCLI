@@ -11,7 +11,6 @@
     <li>{{todo.title}} - {{todo.title}} - {{todo.desc}} - {{todo.active}}</li>
 </ul> -->
 
-
 <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
 
 <h5>Your Todos</h5>
@@ -21,8 +20,12 @@
 
 <ng-template #elseBlock>
 
-    <div *ngFor="let todo of todos">
-        <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)"></app-todo-item>
+    <div *ngFor="let todo of todos; index as i">
+        <app-todo-item  [todo]="todo"
+                        [i] = "i"
+                        (todoCheckBox) = "toggleTodo($event)"
+                        (todoDelete)="deleteTodo($event)">
+        </app-todo-item>
     </div>
 
 </ng-template>
