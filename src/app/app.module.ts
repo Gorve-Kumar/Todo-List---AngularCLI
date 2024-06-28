@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './MyComponents/todos/todos.component';
 import { TodoItemComponent } from './MyComponents/todo-item/todo-item.component';
 import { AddTodoComponent } from './MyComponents/add-todo/add-todo.component';
+import { FormsModule } from '@angular/forms';
 
 
 // This File is basically entry point in our project.
@@ -16,7 +17,8 @@ import { AddTodoComponent } from './MyComponents/add-todo/add-todo.component';
   ],
   imports: [ // Externals Modules
     BrowserModule, // Used for DOM manipulations
-    AppRoutingModule // Opens URL without reloading the Page.
+    AppRoutingModule, // Opens URL without reloading the Page.
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
